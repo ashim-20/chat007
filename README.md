@@ -60,3 +60,4 @@ src/
 └── components/          # Sidebar, WelcomeScreen, ChatView, Message,
                          # Markdown, Composer, ModelPicker, ThemeToggle, icons
 ```
+# chat007
