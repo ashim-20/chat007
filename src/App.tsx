@@ -17,7 +17,7 @@ import type {
 } from './types'
 
 const MODEL_KEY = 'chat.model'
-const DEFAULT_MODEL = 'glm-5.3'
+const DEFAULT_MODEL = 'deepseek-v4-flash'
 
 function loadModel(): string {
   return localStorage.getItem(MODEL_KEY) || DEFAULT_MODEL

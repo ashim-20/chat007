@@ -17,6 +17,10 @@ dist-ssr
 
 # Vercel
 .vercel/
+.claude/
+
+
+
 
 # Build and test coverage
 coverage/
@@ -31,3 +35,5 @@ coverage/
 *.njsproj
 *.sln
 *.sw?
+.claude/
+CLAUDE.md

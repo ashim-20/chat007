@@ -7,8 +7,15 @@ export default defineConfig(({ mode }) => {
   // Read API_BASE / API_KEY from .env (no VITE_ prefix, so they are never
   // exposed to the browser bundle — they only exist here, in the dev proxy).
   const env = loadEnv(mode, process.cwd(), '')
-  const target = env.API_BASE || 'http://localhost:11434'
+  const target = env.API_BASE?.replace(/\/+$/, '')
   const apiKey = env.API_KEY || ''
+
+  if (!target) {
+    throw new Error(
+      'API_BASE is not set. Copy .env.example to .env and point API_BASE at your ' +
+        'OpenAI-compatible endpoint, e.g. API_BASE=https://your-endpoint.example',
+    )
+  }
 
   return {
     plugins: [react(), tailwindcss()],
